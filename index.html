@@ -20,7 +20,7 @@
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UniPano: Panoramic Video Generation with Masked Diffusion Transformer</title>
+  <title>PanoDiT: Panoramic Videos Generation with Diffusion Transformer</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -73,7 +73,7 @@
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        UniPano: A panoramic (ERP) video generation model supporting \textbf{unified control inputs}. By providing text, single-frame panoramic images, or NFoV video as input (left), our UniPano generates high-quality panoramic videos with consistent spatial and temporal coherence (right).
+         We propose <b>PanoDiT</b>, a framework that utilizes the Diffusion Transformer (DiT) architecture to generate panoramic videos from text descriptions.
       </h2>
     </div>
   </div>
@@ -87,7 +87,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With the surge in immersive experiences like AR and VR within the metaverse, panoramic video has become a focal point in research and applications. Capturing high-quality panoramic video is often prohibitively expensive, yet recent advancements in video generation models have shown strong potential across general video contexts. While some studies have explored panoramic video generation using text or sliding window control methods, a unified framework that integrates diverse control modalities is still lacking. To bridge this gap, we propose UniPano, a panoramic video generation framework built on the mask DiT method. our UniPano’s core innovation lies in its ability to unify multiple control modalities for panoramic video generation, including text prompts, single panoramic images, and narrow field-of-view (NFoV) videos, creating a versatile framework in this domain. To further improve both pixel-level and semantic-level spatiotemporal consistency, we design two loss functions tailored to panoramic motion patterns, along with an edge recovery technique based on phase-shift alignment.
+           As immersive experiences become increasingly popular, panoramic video has garnered significant attention in both research and applications. The high cost associated with capturing panoramic video underscores the need for efficient prompt-based generation methods. Although recent text-to-video (T2V) diffusion techniques have shown potential in standard video generation, they face challenges when applied to panoramic videos due to substantial differences in content and motion patterns. In this paper, we propose PanoDiT, a framework that utilizes the Diffusion Transformer (DiT) architecture to generate panoramic videos from text descriptions. Unlike traditional methods that rely on UNet-based denoising, our method leverages a transformer architecture for denoising, incorporating both temporal and global attention mechanisms. This ensures coherent frame generation and smooth motion transitions, offering distinct advantages in long-horizon generation tasks. To further enhance motion and consistency in the generated videos, we introduce DTM-LoRA and two panoramic-specific losses. Compared to previous methods, our PanoDiT achieves state-of-the-art performance across various evaluation metrics and user study。
           </p>
         </div>
       </div>
@@ -131,13 +131,14 @@
             </div>
         </div>
   
-<section>
-        <h2>Method</h2>
-        <img src="./static/images/overview.png" alt="framework" style="width: 50%; height: auto;">
-        <p>
-            <b>Overview of UniPano.</b>
-        </p>
-    </section>
+<section style="text-align: center;">
+    <h2>Method</h2>
+    <img src="./static/images/overview.png" alt="framework" style="width: 50%; height: auto; margin: 0 auto;">
+    <p>
+        <b>Overview of PanoDiT.</b>
+    </p>
+</section>
+
 <!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
