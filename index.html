@@ -12,8 +12,6 @@
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-
-
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
@@ -22,13 +20,10 @@
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>PanoDiT: Panoramic Videos Generation with Diffusion Transformer</title>
+  <title>UniPano: Panoramic Video Generation with Masked Diffusion Transformer</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -36,7 +31,6 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -45,15 +39,13 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">PanoDiT: Panoramic Videos Generation with Diffusion Transformer</h1>
-
+            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <div class="is-size-5 publication-authors">
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
@@ -64,8 +56,6 @@
                       <span>Supplementary</span>
                     </a>
                   </span>
-                </a>
-              </span>
             </div>
           </div>
         </div>
@@ -73,25 +63,22 @@
     </div>
   </div>
 </section>
-
-
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/teaser.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        UniPano: A panoramic (ERP) video generation model supporting \textbf{unified control inputs}. By providing text, single-frame panoramic images, or NFoV video as input (left), our UniPano generates high-quality panoramic videos with consistent spatial and temporal coherence (right).
       </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -100,7 +87,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            As immersive experiences become increasingly popular, panoramic video has garnered significant attention in both research and applications. The high cost associated with capturing panoramic video underscores the need for efficient prompt-based generation methods. Although recent text-to-video (T2V) diffusion techniques have shown potential in standard video generation, they face challenges when applied to panoramic videos due to substantial differences in content and motion patterns. In this paper, we propose PanoDiT, a framework that utilizes the Diffusion Transformer (DiT) architecture to generate panoramic videos from text descriptions. Unlike traditional methods that rely on UNet-based denoising, our method leverages a transformer architecture for denoising, incorporating both temporal and global attention mechanisms. This ensures coherent frame generation and smooth motion transitions, offering distinct advantages in long-horizon generation tasks. To further enhance motion and consistency in the generated videos, we introduce DTM-LoRA and two panoramic-specific losses. Compared to previous methods, our PanoDiT achieves state-of-the-art performance across various evaluation metrics and user study.
+            With the surge in immersive experiences like AR and VR within the metaverse, panoramic video has become a focal point in research and applications. Capturing high-quality panoramic video is often prohibitively expensive, yet recent advancements in video generation models have shown strong potential across general video contexts. While some studies have explored panoramic video generation using text or sliding window control methods, a unified framework that integrates diverse control modalities is still lacking. To bridge this gap, we propose UniPano, a panoramic video generation framework built on the mask DiT method. our UniPano’s core innovation lies in its ability to unify multiple control modalities for panoramic video generation, including text prompts, single panoramic images, and narrow field-of-view (NFoV) videos, creating a versatile framework in this domain. To further improve both pixel-level and semantic-level spatiotemporal consistency, we design two loss functions tailored to panoramic motion patterns, along with an edge recovery technique based on phase-shift alignment.
           </p>
         </div>
       </div>
@@ -108,49 +95,82 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
-<section>
-        <h2>Failure Cases</h2>
-        <div class="scroll-area" style="overflow-x: auto;">
-            <div class="show prompt-guided">
-                <div class="center">
-                    <b>AnimateDiff</b>
-                </div>
-                <div class="center">
-                    <b>SVD</b>
-                </div>
-                <div class="center">
-                    <b>360DVD</b>
-                </div>
-                <div class="center">
-                    <b>PanoDiT</b>
-                </div>
-
-                <div class="full-line center">a lot of human in a playground</div>
-                <div class="video">
-                    <video playsinline autoplay loop muted>
-                        <source data-src="./static/videos/AnimateDiff-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video">
-                    <video playsinline autoplay loop muted>
-                        <source data-src="./static/videos/SVD-l.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video">
-                    <video playsinline autoplay loop muted>
-                        <source data-src="./static/videos/360DVD-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video">
-                    <video playsinline autoplay loop muted>
-                        <source data-src="./static/videos/PanoDiT-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-
+<section class="VR Video">
+          <div class="top-videos">
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/UniPano11.mp4" data-vrsrc="./static/videos/UniPano11.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/UniPano12.mp4" data-vrsrc="./static/videos/UniPano12.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/UniPano13.mp4" data-vrsrc="./static/videos/UniPano13.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/04.mp4" data-vrsrc="./static/videos/04-vr.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/05.mp4" data-vrsrc="./static/videos/05-vr.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video playsinline autoplay loop muted>
+                    <source data-src="./static/videos/06.mp4" data-vrsrc="./static/videos/comp-fireworks-o.mp4"
+                        type="video/mp4">
+                </video>
             </div>
         </div>
+  
+<section>
+        <h2>Method</h2>
+        <img src="./static/images/overview.png" alt="framework" style="width: 50%; height: auto;">
+        <p>
+            <b>Overview of UniPano.</b>
+        </p>
     </section>
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/UniPano11.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/UniPano12.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/UniPano13.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -190,10 +210,6 @@
 </div>
 </section>
 <!-- End image carousel -->
-
-
-
-
 <!-- Youtube video -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -213,11 +229,38 @@
   </div>
 </section>
 <!-- End youtube video -->
-
-
-
-
-
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -226,31 +269,24 @@
     </div>
 </section>
 <!--End BibTex citation -->
-
-
   <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
   </div>
 </footer>
-
 <!-- Statcounter tracking code -->
   
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
     <!-- End of Statcounter Code -->
-
   </body>
   </html>
